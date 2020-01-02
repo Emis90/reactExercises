@@ -10,29 +10,30 @@ const fetchData = async(URL) => {
   let {data} = await axios.get(URL)
   console.log('data >>', data)
   updateState({pokemons: data.results, next: data.next, prev: data.previous})
-  }
+
+}
 
 useEffect(()=> {
   let URL = 'https://pokeapi.co/api/v2/pokemon';
   fetchData(URL)
-
-},[URL])
+},[])
 
 const nextPage = () => {
-  if (state.next === null) {
+  if(state.next === null) {
     return
   }
- URL = state.next
+  fetchData(state.next)
 }
 
 const prevPage = () => {
-  if (state.previous === null) {
+  if(state.prev === null) {
     return
   }
- URL = state.previous
+  fetchData(state.prev)
 }
    return (
-     <div>
+
+    <div>
       {
         state.pokemons.map((poke, i) => {
         return <p key={i}>{poke.name} <br/><img src={poke.ur}/></p>
