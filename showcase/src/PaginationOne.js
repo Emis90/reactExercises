@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-const Pagination = () => {
+const PaginationOne = () => {
 
 const [ state, updateState ] = useState({pokemons: [], data: {}, next: '', prev: ''})
 
@@ -34,9 +34,12 @@ const prevPage = () => {
    return (
 
     <div>
+    <p>This is the Pagination Part 1 page, checkout some Pokemons:</p>
+    <button onClick={prevPage}>Prev</button>
+    <button onClick={nextPage}>Next</button>
       {
         state.pokemons.map((poke, i) => {
-        return <p key={i}>{poke.name} <br/><img src={poke.ur}/></p>
+        return <p key={i}>{poke.name} <br/>&hearts;</p>
         })
       }
       <button onClick={prevPage}>Prev</button>
@@ -46,4 +49,4 @@ const prevPage = () => {
 }
 
 
-export default Pagination
+export default PaginationOne
