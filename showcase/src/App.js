@@ -10,6 +10,7 @@ import PaginationOne from './PaginationOne'
 import Hooks from './Hooks'
 import logo from './logo.svg';
 import PaginationTwo from './PaginationTwo'
+import PaginationThree from './PaginationThree'
 import './App.css';
 
 
@@ -31,6 +32,7 @@ function App() {
            <Route path="/palindrome" component={Palindrome}/>
            <Route path="/pagination1" component={PaginationOne}/>
            <Route path="/pagination2" component={PaginationTwo}/>
+           <Route path="/pagination3" component={PaginationThree}/>
            <div>
            <div>
            <Link to='/hooks'>Hooks</Link>
@@ -43,6 +45,9 @@ function App() {
            </div>
            <div>
            <Link to='/pagination2'>PaginationTwo</Link>
+           </div>
+           <div>
+           <Link to='/pagination3'>PaginationThree</Link>
            </div>
            </div>
          </Switch>

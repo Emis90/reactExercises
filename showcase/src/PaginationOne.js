@@ -10,7 +10,6 @@ const fetchData = async(URL) => {
   let {data} = await axios.get(URL)
   console.log('data >>', data)
   updateState({pokemons: data.results, next: data.next, prev: data.previous})
-
 }
 
 useEffect(()=> {
