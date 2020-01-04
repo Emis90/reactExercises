@@ -9,7 +9,7 @@ useEffect(() => {
   const getData = async() => {
   let {data} = await axios.get('https://pokeapi.co/api/v2/pokemon')
   // console.log('data >>', data)
-  let pokePerPage = 2
+  let pokePerPage = 5
   let pokemons = data.results
   let k = 0;
   let page = 1

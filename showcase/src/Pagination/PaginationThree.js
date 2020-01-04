@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import Posts from './Posts';
+import PaginationPosts from './PagiantionPosts'
 
 function PaginationThree() {
   const [pokes, setPokes]  = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [pokesPerPage, setPokesPerPage] = useState(3)
+  const [pokesPerPage] = useState(5)
 
+  const paginate = (num) => {
+    setCurrentPage(num)
+  }
   useEffect(()=> {
 
     const getData = async() =>{
@@ -17,14 +22,18 @@ function PaginationThree() {
     }
 
     getData()
+
   }, [])
 
-  console.log(pokes)
+  //get current posts
+  const idxLastPoke = currentPage * pokesPerPage
+  const idxFirstPoke = idxLastPoke - pokesPerPage
+  const current = pokes.slice(idxFirstPoke, idxLastPoke)
 
   return (
     <div>
-    {loading ? (<p>loading</p>) : (<p>Poke page</p>)}
-
+    <Posts pokes={current} loading={loading} />
+    <PaginationPosts pokesPerPage={pokesPerPage} totalPokes={pokes.length} paginate={paginate}/>
     </div>
   )
 }

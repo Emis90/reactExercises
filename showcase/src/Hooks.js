@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function Hooks() {
-    const [ pages, changePages ] = useState(1)
+    const [pages, changePages] = useState(1)
     const [name, changeName] = useState({first: '', last: ''})
     const [note, setNote] = useState({word: '', list: []})
 

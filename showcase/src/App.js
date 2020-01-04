@@ -6,11 +6,11 @@ import {
   Link
 } from 'react-router-dom'
 import Palindrome from './Palindrome'
-import PaginationOne from './PaginationOne'
+import PaginationOne from './Pagination/PaginationOne'
 import Hooks from './Hooks'
 import logo from './logo.svg';
-import PaginationTwo from './PaginationTwo'
-import PaginationThree from './PaginationThree'
+import PaginationTwo from './Pagination/PaginationTwo'
+import PaginationThree from './Pagination/PaginationThree'
 import './App.css';
 
 
