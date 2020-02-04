@@ -12,6 +12,8 @@ function PaginationThree() {
   const paginate = (num) => {
     setCurrentPage(num)
   }
+
+
   useEffect(()=> {
 
     const getData = async() =>{

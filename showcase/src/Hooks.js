@@ -10,6 +10,10 @@ function Hooks() {
       setNote({word:'', list: [...note.list, note.word]})
     }
 
+    const deleteNote = (idx) => {
+      setNote({...note, list: note.list.filter((el, id) => {return id !== idx})})
+    }
+
         return(
           <div>
                 <div className="notes">
@@ -20,11 +24,13 @@ function Hooks() {
               <button>Add</button>
               <ul>
               {
-                note.list.map((word, i) => (<li key={i}>{word}</li>))
+                note.list.map((word, i) => {
+                  return (
+                    <p key={i} onClick={()=>deleteNote(i)}>{word} X</p>
+                 )})
               }
             </ul>
             </form>
-
           </div>
           <div className='counter'>
             <p>Change pages</p>
@@ -43,7 +49,6 @@ function Hooks() {
               />
               <h3>Your name is: {name.first} {name.last}</h3>
             </form>
-
           </div>
           </div>
         )
